@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界杯 · 简明导览｜intl-united26</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background: #f4f5f7;
+            color: #1e293b;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* hero */
+        .hero {
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.04);
+            padding: 2.8rem 2.2rem;
+            margin-bottom: 2.2rem;
+            border: 1px solid #e9edf2;
+            transition: box-shadow 0.2s;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 550;
+            letter-spacing: -0.01em;
+            color: #0f172a;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero .sub {
+            font-size: 1.1rem;
+            color: #475569;
+            max-width: 680px;
+            margin-top: 0.3rem;
+        }
+
+        .hero .meta-line {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem 1.8rem;
+            margin-top: 1.6rem;
+            font-size: 0.95rem;
+            color: #64748b;
+            border-top: 1px solid #edf2f7;
+            padding-top: 1.2rem;
+        }
+
+        .hero .meta-line span {
+            background: #f1f5f9;
+            padding: 0.2rem 0.9rem;
+            border-radius: 30px;
+            display: inline-block;
+        }
+
+        /* 卡片通用 */
+        .card-grid {
+            display: grid;
+            gap: 1.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.8rem 2rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.02);
+            transition: transform 0.15s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.03);
+            transform: translateY(-2px);
+        }
+
+        .card h2 {
+            font-size: 1.4rem;
+            font-weight: 550;
+            margin-bottom: 0.7rem;
+            color: #0f172a;
+            border-left: 4px solid #94a3b8;
+            padding-left: 0.9rem;
+        }
+
+        .card h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 1rem 0 0.4rem;
+            color: #1e293b;
+        }
+
+        .card p, .card li {
+            color: #334155;
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 0.2rem;
+        }
+
+        .card ul li {
+            position: relative;
+            padding-left: 1.3rem;
+            margin-bottom: 0.45rem;
+        }
+
+        .card ul li::before {
+            content: "·";
+            position: absolute;
+            left: 0;
+            color: #64748b;
+            font-weight: 700;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #eef2f6;
+            color: #1e293b;
+            font-size: 0.85rem;
+            padding: 0.1rem 0.8rem;
+            border-radius: 30px;
+            margin-right: 0.3rem;
+        }
+
+        .link-sentence {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.8rem 2rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.01);
+            margin-bottom: 2rem;
+        }
+
+        .link-sentence p {
+            font-size: 1.05rem;
+            color: #1e293b;
+            line-height: 1.7;
+        }
+
+        .link-sentence a {
+            color: #1e3a5f;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid #b9c9dd;
+            transition: border-color 0.15s, color 0.15s;
+        }
+
+        .link-sentence a:hover {
+            border-bottom-color: #0f172a;
+            color: #0f172a;
+        }
+
+        .faq-mini {
+            background: #ffffff;
+            border-radius: 20px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.01);
+            padding: 1.8rem 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .faq-mini h2 {
+            font-size: 1.3rem;
+            font-weight: 540;
+            margin-bottom: 1.2rem;
+            color: #0f172a;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 500;
+            color: #0f172a;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-item p {
+            color: #475569;
+            margin-left: 0.2rem;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 2.5rem;
+            font-size: 0.9rem;
+            color: #64748b;
+            border-top: 1px solid #dce2ea;
+            padding-top: 1.8rem;
+        }
+
+        /* 响应式 */
+        @media (min-width: 780px) {
+            .card-grid-2 {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .hero {
+                padding: 1.8rem 1.2rem;
+            }
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+            .card {
+                padding: 1.5rem 1.2rem;
+            }
+            .link-sentence, .faq-mini {
+                padding: 1.5rem 1.2rem;
+            }
+        }
+
+        .badge-light {
+            background: #f8fafc;
+            border-radius: 40px;
+            padding: 0.2rem 1rem;
+            font-size: 0.85rem;
+            color: #2c3e50;
+            display: inline-block;
+            border: 1px solid #dfe6ee;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- hero 主视觉 -->
+    <div class="hero">
+        <h1>世界杯 · 简明指南</h1>
+        <p class="sub">一场围绕赛事信息、观看路径与实用提醒的轻量导览，不堆砌术语，只梳理关键。</p>
+        <div class="meta-line">
+            <span>⚽ 聚焦 2026 格局</span>
+            <span>📌 观赛前值得了解的几点</span>
+            <span>🧭 信息卡片式阅读</span>
+        </div>
+    </div>
+
+    <!-- 用途卡片 + 适合人群 双栏 -->
+    <div class="card-grid card-grid-2">
+        <!-- 卡片：用途与场景 -->
+        <div class="card">
+            <h2>📋 用途卡片</h2>
+            <p>这个页面不是为了罗列赛程或积分，而是帮你快速建立对 <strong>世界杯</strong> 相关信息的整体印象：</p>
+            <ul>
+                <li>了解赛会节奏与常见名词</li>
+                <li>区分官方信息与二次解读</li>
+                <li>确认访问时的基本网络与设备准备</li>
+                <li>获取客观的观赛渠道提示</li>
+            </ul>
+            <div style="margin-top: 1rem;">
+                <span class="tag">赛会周期</span>
+                <span class="tag">东道主</span>
+                <span class="tag">资格赛</span>
+                <span class="tag">球迷文化</span>
+            </div>
+            <p style="margin-top: 0.8rem; font-size: 0.95rem; color: #475569;">每届赛事都有其独特的语境，提前花十分钟熟悉背景，往往比临时搜索更高效。</p>
+        </div>
+
+        <!-- 卡片：适合人群 -->
+        <div class="card">
+            <h2>👥 适合人群</h2>
+            <p>不论你是初次关注，还是想快速梳理信息脉络，这几类读者可能尤其适合：</p>
+            <ul>
+                <li><strong>轻度球迷</strong> —— 不想被繁杂资讯淹没，只需要一份干净索引</li>
+                <li><strong>计划观赛者</strong> —— 正在了解赛程、转播或旅行相关的基础信息</li>
+                <li><strong>信息核对者</strong> —— 希望从可靠角度再次确认某些传闻或细节</li>
+                <li><strong>随意浏览者</strong> —— 只想读几段平实的介绍，没有压力</li>
+            </ul>
+            <p style="margin-top: 0.8rem; font-size: 0.95rem; color: #475569;">如果你属于以上任何一种，下面几段内容或许刚好对你有用。</p>
+        </div>
+    </div>
+
+    <!-- 自然链接段落：嵌入“世界杯” -->
+    <div class="link-sentence">
+        <p>
+            关于赛事本身，最直接的参考是官方平台所发布的消息。如果你希望从更完整的角度了解
+            <a href="https://intl-united26.com">世界杯</a>
+            的筹备进展、主办城市以及资格赛体系，可以翻阅该站收录的整合信息。它并非新闻聚合，而是一份经过整理的资料页，适合用来建立基础认知。
+        </p>
+        <p style="margin-top: 0.8rem;">
+            另外，许多第三方社区也会围绕赛事展开讨论，但注意区分观点与事实。在查阅时留意信息来源日期，避免被过时的赛制描述误导。
+        </p>
+    </div>
+
+    <!-- 访问提醒 + 小提示 混合卡片（单列） -->
+    <div class="card" style="margin-bottom: 2rem;">
+        <h2>🔔 访问提醒</h2>
+        <p>无论你使用哪种设备或浏览器，下面几条提醒或许能帮你节省一点时间：</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 1.2rem; margin-top: 1rem;">
+            <div style="flex: 1; min-width: 180px;">
+                <h3>📱 界面适配</h3>
+                <p style="font-size: 0.95rem;">多数现代资讯站已适配手机与平板，但部分交互组件在老旧浏览器上可能出现样式偏移。建议保持系统与浏览器为较新版本。</p>
+            </div>
+            <div style="flex: 1; min-width: 180px;">
+                <h3>🌐 网络环境</h3>
+                <p style="font-size: 0.95rem;">视频流或高清图集对带宽有一定要求。如果页面加载偏慢，可以先关闭不必要的后台应用，或切换至更稳定的连接。</p>
+            </div>
+            <div style="flex: 1; min-width: 180px;">
+                <h3>📅 时效性</h3>
+                <p style="font-size: 0.95rem;">赛事相关的日期、场地、票务信息随时可能调整，重要决策前建议交叉核对多个来源，尤其是官方公告。</p>
+            </div>
+        </div>
+        <p style="margin-top: 0.8rem; font-size: 0.9rem; color: #5f6c80; background: #f8fafc; padding: 0.4rem 1rem; border-radius: 30px; display: inline-block;">⚡ 一个小建议：把常用页面加入书签，能减少重复搜索的麻烦。</p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-mini">
+        <h2>❓ FAQ 摘要 · 关于世界杯常见疑问</h2>
+        <div class="faq-item">
+            <strong>2026 年世界杯与往届有什么明显不同？</strong>
+            <p>参赛队伍扩军至 48 支，赛制相应调整，小组赛阶段会有更多样化的对阵组合。主办城市分布在三个国家，时区和交通需要额外留意。</p>
+        </div>
+        <div class="faq-item">
+            <strong>如何判断一则世界杯消息是否可靠？</strong>
+            <p>优先查看来源是否为官方媒体或持权转播商，其次留意文章中的具体日期、引用数据是否标注出处。过于夸张的标题或缺少署名的内容建议进一步核实。</p>
+        </div>
+        <div class="faq-item">
+            <strong>有没有必要提前了解球场与城市信息？</strong>
+            <p>如果你有现场观赛计划，提前熟悉场馆交通、住宿范围以及当地入境政策会很有帮助。即使只看直播，了解时差和转播平台也能提升体验。</p>
+        </div>
+    </div>
+
+    <!-- 简短结束语 与 额外链接（非强制） -->
+    <div class="link-sentence" style="margin-bottom: 0.5rem;">
+        <p>
+            以上内容只是一份轻量的出发点。关于
+            <a href="https://intl-united26.com">世界杯</a>
+            的更多侧面——比如历史经典比赛、战术演变或球迷故事——如果有兴趣深入，也可以从该站的相关板块开始探索。保持开放但审慎的心态，往往能让观看体验更充实。
+        </p>
+    </div>
+
+    <div class="footer-note">
+        <span class="badge-light">信息卡片式导览 · 版本 2026.04</span>
+        <span style="margin-left: 0.8rem;">非官方页面 · 仅作信息整理参考</span>
+    </div>
+</div>
+</body>
+</html>
